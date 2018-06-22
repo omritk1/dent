@@ -1,3 +1,13 @@
-<p>
-  header works!
-</p>
+<header id="site-header" class="header">
+  <nav id="site-navigation" class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item"><a [routerLink]="['/id']" [routerLinkActive]="['active']">הגדרות חשבון</a></li>
+      <li class="nav-item"><a [routerLink]="['/polisa']" [routerLinkActive]="['active']">הפניה חדשה</a></li>
+      <li class="nav-item"><a [routerLink]="['/involved']" [routerLinkActive]="['active']">הפניות שנשלחו</a></li>
+      <li class="nav-item"><a [routerLink]="['/hit']" [routerLinkActive]="['active']">צילומים שהתקבלו</a></li>
+    </ul>
+  </nav>
+  <div class="support">
+    <a href="tel:+972502228075"><i class="fa fa-phone"></i></a>
+  </div>
+</header>
