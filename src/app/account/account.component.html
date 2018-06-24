@@ -1,3 +1,96 @@
-<p>
-  account works!
-</p>
+<form #accountSettings="ngForm" class="accountSettings" novalidate>
+    <div class="tab-pane fade in active">
+        <div class='row'>
+            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                <div class="row">
+                  <h1 class="account-settings-h1">הגדרות חשבון</h1>
+                  <h2 class="account-settings-h2">פרטים אישיים</h2>
+                  <label>שם פרטי
+                    <input required class="form-control"
+                           type="text"
+                           name="doctorName"
+                           #city
+                           [(ngModel)]="this.doctorName">
+                  </label>
+                  <label>שם משפחה
+                    <input required class="form-control"
+                           type="text"
+                           name="doctorLastName"
+                           #street
+                           [(ngModel)]="this.doctorLastName">
+                  </label>
+                    <label>תאריך לידה
+                      <input required class="form-control"
+                             type="date"
+                             name="doctorNameBday"
+                             #date
+                             [(ngModel)]="this.doctorNameBday" >
+                    </label>
+                  </div>
+                  <div class="row">
+                  <h2 class="account-settings-h2">פרטי המרפאה</h2>
+                  <label>שם המרפאה
+                    <input required class="form-control"
+                           type="text"
+                           name="clinicName"
+                           #street
+                           [(ngModel)]="this.clinicName">
+                  </label>
+                  <label>עיר
+                    <input required class="form-control"
+                           type="text"
+                           name="clinicCity"
+                           #street
+                           [(ngModel)]="this.clinicCity">
+                  </label>
+                  <label>רחוב ומספר
+                    <input required class="form-control"
+                           type="text"
+                           name="clinicAddress"
+                           #street
+                           [(ngModel)]="this.clinicAddress">
+                  </label>
+                  <label>קומה
+                    <input required class="form-control"
+                           type="text"
+                           name="clinicFloor"
+                           #street
+                           [(ngModel)]="this.clinicFloor">
+                  </label>
+                  <label>שעות פעילות
+                     <textarea
+                     class="form-control"
+                     name="clinicOpeningHours"
+                     #dit
+                     rows="2" cols="80"
+                     [(ngModel)]="this.clinicOpeningHours">
+                     </textarea>
+                   </label>
+                   </div>
+                   <div class="row">
+                     <h2 class="account-settings-h2">דרישות הרופא</h2>
+                   <label>קבלת צילום למערכת
+                     <input required class="form-control"
+                            type="radio"
+                            name="deliveryMethod"
+                            [(ngModel)]="this.deliveryMethod1">
+                    </label>
+                    <label>קבלת צילום למרפאה
+                     <input required class="form-control"
+                            type="radio"
+                            name="deliveryMethod"
+                            [(ngModel)]="this.deliveryMethod2">
+                    </label>
+                    </div>
+                   <button
+                          routerLink="/end"
+                          class="btn btn-outline-rounded btn-info"
+                          [disabled]="!accountSettings.valid"
+                          (click)="updateItem(item.$key, date.value,time.value,city.value,street.value,dit.value)"
+                          >עדכן פרטים
+                  </button>
+
+            </div>
+        </div>
+    </div>
+</form>
